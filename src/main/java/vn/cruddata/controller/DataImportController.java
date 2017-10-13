@@ -11,21 +11,31 @@ import vn.cruddata.services.UserService;
 
 /**
  * Created by hoangtd on 10/12/2017.
+ * API import data to database
  */
 @RestController
-@RequestMapping(value = "import-data")
 @Transactional
+@RequestMapping(value = "import-data")
 public class DataImportController {
 
     @Autowired
     private UserService userService;
 
     @RequestMapping(value = "add-user", method = RequestMethod.GET)
-    public @ResponseBody
-    UserDto addUser(){
-        UserDto userDto = new UserDto("a","a",1,"a","a");
-        userService.addUser(userDto);
+    public @ResponseBody String addUser(){
+        for(int i = 0;i<30;i++){
+            UserDto userDto = new UserDto("A0000" + i,"A0000" + i,1,"A0000" + i,"A0000" + i);
+            userService.addUser(userDto);
+        }
 
-        return userDto;
+        return "success";
     }
+
+    @RequestMapping(value = "clean-data", method = RequestMethod.GET)
+    public @ResponseBody String cleanData(){
+        userService.deleteAllDataUser();
+
+        return "success";
+    }
+
 }

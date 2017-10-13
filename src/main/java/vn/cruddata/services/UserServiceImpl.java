@@ -41,4 +41,14 @@ public class UserServiceImpl implements UserService{
         userRepository.delete(userId);
     }
 
+    @Override
+    public UserDto getUserById(Integer userId) {
+        return userRepository.findOne(userId);
+    }
+
+    @Override
+    public void deleteAllDataUser() {
+        userRepository.deleteAll();
+    }
+
 }

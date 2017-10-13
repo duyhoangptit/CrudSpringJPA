@@ -1,4 +1,6 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "s"%>
+<%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html>
 <head><title>SpringBoot</title>
@@ -20,16 +22,16 @@
 </head>
 <body>
 <hr/>
-<form method="post" action="/save">
-    <input type="hidden" name="id" value="${lists.id}"/><br/>
-    First name:<br>
-    <input type="text" name="firstname" value="${lists.firstName}"/>
-    <br>
-    Last name:<br>
-    <input type="text" name="lastname" value="${lists.lastName}">
+<s:form method="POST" action="/crud-user/saveOrUpdate">
+    <s:input type = "hidden" path = "id"/><br/>
+    <br>Username:
+    <s:input path="username" value="${user.username}"/>
+    <br>Fullname:
+    <s:input path="fullName" value="${user.fullName}"/>
+    <br>Email:
+    <s:input  path="email" value="${user.email}"/>
     <br><br>
     <input type="submit" value="Submit">
-</form>
-
+</s:form>
 </body>
 </html>

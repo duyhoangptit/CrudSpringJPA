@@ -18,4 +18,8 @@ public interface UserService {
     List<UserDto> findUserByEmail(String email);
 
     void deleteUser(Integer userId);
+
+    UserDto getUserById(Integer userId);
+
+    void deleteAllDataUser();
 }

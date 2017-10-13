@@ -3,9 +3,10 @@ package vn.cruddata.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import vn.cruddata.entities.UserDto;
 import vn.cruddata.services.UserService;
 
 /**
@@ -20,11 +21,10 @@ public class HomeController {
     private UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView doHome(){
-        ModelAndView mv = new ModelAndView("index");
+    public String doHome(Model model){
+        model.addAttribute("listUser", userService.findAll());
+        model.addAttribute("command", new UserDto());
 
-        mv.addObject("listUser", userService.findUserByEmail("a"));
-
-        return mv;
+        return "index";
     }
 }

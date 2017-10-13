@@ -3,3 +3,5 @@
 #https://stackoverflow.com/questions/21069687/hibernate-auto-create-database
 
 #https://stackoverflow.com/questions/21083170/spring-boot-how-to-configure-port
+
+-Dserver.port=8000

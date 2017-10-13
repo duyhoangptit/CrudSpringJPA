@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head><title>SpringBoot</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
         table {
             font-family: arial, sans-serif;
@@ -23,17 +24,17 @@
 <table>
     <tr>
         <th>ID</th>
-        <td>${lists.id}</td>
+        <td>${user.id}</td>
     </tr>
     <tr>
-        <th>First Name</th>
-        <td>${lists.firstName}</td>
+        <th>Email</th>
+        <td>${user.email}</td>
     </tr>
     <tr>
-        <th>Last Name</th>
-        <td>${lists.lastName}</td>
+        <th>Fullname</th>
+        <td>${user.fullName}</td>
     </tr>
 </table>
-<a href="/">Back</a>
+<a href="/home/">Back</a>
 </body>
 </html>
