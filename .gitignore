@@ -7,3 +7,5 @@ target/
 *.ipr
 
 
+# dependencies
+angular2/node_modules
