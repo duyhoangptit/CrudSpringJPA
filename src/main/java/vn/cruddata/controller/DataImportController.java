@@ -2,10 +2,7 @@ package vn.cruddata.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import vn.cruddata.entities.UserDto;
 import vn.cruddata.services.UserService;
 
@@ -21,6 +18,7 @@ public class DataImportController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping(value = "add-user", method = RequestMethod.GET)
     public @ResponseBody String addUser(){
         for(int i = 0;i<30;i++){
